@@ -61,11 +61,5 @@ namespace BigfootTracker.Models
             }
         }
 
-        // public static void RemoveItems()
-        // {
-        //     RemovedItems = new List<string>();
-        // }
-        // public List<string> RemovedItems { get; set; }
-
     }
 }
