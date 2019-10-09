@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BigfootTracker.Models
 {
@@ -11,6 +12,7 @@ namespace BigfootTracker.Models
         public int Id { get; }
         public static List<Item> _instances = new List<Item> {};
         public static int _backpackWeight { get; set; }
+        private static int _idCounter = 0;
 
         public Item (string name, string description, string purchased, int weight)
         {
@@ -19,7 +21,8 @@ namespace BigfootTracker.Models
             Purchased = purchased;
             Weight = weight;
             _instances.Add(this);
-            Id = _instances.Count;
+            _idCounter ++;
+            Id = _idCounter;
             _backpackWeight = 0;
         }
 
@@ -30,7 +33,7 @@ namespace BigfootTracker.Models
 
         public static Item Find(int searchId)
         {
-        return _instances[searchId-1];
+        return _instances.Where(item => item.Id == searchId).FirstOrDefault();
         }
 
         public static void ClearAll()

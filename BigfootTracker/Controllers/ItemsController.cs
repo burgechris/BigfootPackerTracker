@@ -39,7 +39,8 @@ namespace BigfootTracker.Controllers
         {
             foreach(int id in ids)
             {
-                Item._instances.Remove(Item._instances[id - 1]);
+                Item deleteItem = Item.Find(id);
+                Item._instances.Remove(deleteItem);
             }
             Item.BackpackWeight();
             return View();
