@@ -24,7 +24,14 @@ namespace BigfootTracker.Controllers
         {
         Item myItem = new Item(name, description, purchased, weight);
         Item.BackpackWeight();
-        return RedirectToAction("Index");
+            if (Item._backpackWeight > 80)
+            {
+            return RedirectToAction("Remove");
+            }
+            else
+            {
+            return RedirectToAction("Index");
+            }
         }
 
         [HttpGet("/items/{id}")]
