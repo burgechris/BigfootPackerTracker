@@ -23,6 +23,7 @@ namespace BigfootTracker.Controllers
         public ActionResult Create(string name, string description, string purchased, int weight)
         {
         Item myItem = new Item(name, description, purchased, weight);
+        Item.BackpackWeight();
         return RedirectToAction("Index");
         }
 
