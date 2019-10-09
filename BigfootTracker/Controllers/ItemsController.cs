@@ -34,6 +34,14 @@ namespace BigfootTracker.Controllers
             }
         }
 
+        [HttpPost("/items/remove")]
+        public ActionResult Remove(int id)
+        {
+            Item._instances.Remove(Item._instances[id - 1]);
+            Item.BackpackWeight();
+            return View();
+        }
+
         [HttpGet("/items/{id}")]
         public ActionResult Show(int id)
         {

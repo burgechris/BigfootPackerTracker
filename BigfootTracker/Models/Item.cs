@@ -40,6 +40,7 @@ namespace BigfootTracker.Models
 
         public static void BackpackWeight()
         {
+            _backpackWeight = 0;
             foreach (Item item in _instances)
             {
                 _backpackWeight += item.Weight;
@@ -60,6 +61,11 @@ namespace BigfootTracker.Models
             }
         }
 
+        // public static void RemoveItems()
+        // {
+        //     RemovedItems = new List<string>();
+        // }
+        // public List<string> RemovedItems { get; set; }
 
     }
 }

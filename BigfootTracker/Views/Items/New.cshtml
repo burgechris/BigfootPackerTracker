@@ -1,16 +1,41 @@
-<form action="/items" method="post">
-  <label for="name">Enter an item name:</label>
-  <input id="name" name="name" type="text">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Welcome</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+        <link rel="stylesheet" type="text/css" media="screen" href="~/css/site.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Add Supplies To Your Backpack</h1>
+        <form action="/items" method="post">
+          <div class="form-group">
+          <label for="name">Enter an item name:</label>
+          <input id="name" name="name" type="text">
+          </div>
 
-  <label for="description">Enter an item description:</label>
-  <input id="description" name="description" type="text">
+          <div class="form-group">
+          <label for="description">Enter an item description:</label>
+          <input id="description" name="description" type="text">
+          </div>
 
-  <label for="weight">Enter an item weight:</label>
-  <input id="weight" name="weight" type="text">
+          <div class="form-group">
+          <label for="weight">Enter an item weight:</label>
+          <input id="weight" name="weight" type="text">
+          </div>
 
-  <label for="purchased">Is this item purchased already?</label>
-  <input type="radio" name="purchased" value="Yes"> Yes
-  <input type="radio" name="purchased" value="No"> No
+          <div class="form-group">
+          <label for="purchased">Is this item purchased already?</label>
+          <input type="radio" name="purchased" value="Yes"> Yes
+          <input type="radio" name="purchased" value="No"> No
+          </div>
 
-  <button type="submit">Submit</button>
-</form>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+    </body>
+</html>
