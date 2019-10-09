@@ -6,19 +6,19 @@ namespace BigfootTracker.Models
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public bool Purchased { get; set; }
+        public string Purchased { get; set; }
         public int Weight { get; set; }
         public int Id { get; }
         public static List<Item> _instances = new List<Item> {};
 
-        public Item (string Name, string Description, bool Purchased, int Weight)
+        public Item (string name, string description, string purchased, int weight)
         {
             Name = name;
             Description = description;
             Purchased = purchased;
             Weight = weight;
-            Id = _instances.Count;
             _instances.Add(this);
+            Id = _instances.Count;
         }
 
         public static List<Item> GetAll()

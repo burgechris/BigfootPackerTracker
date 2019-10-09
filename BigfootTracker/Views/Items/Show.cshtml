@@ -1,9 +1,12 @@
 <h1>Bigfoot Tracker Pack Details: </h1>
 
-<h2>@Model.Name</h2>
-<h3>@Model.Description</h3>
-<h3>@Model.Purchased</h3>
-<h3>@Model.Weight</h3>
+<h2>Item Name: @Model.Name</h2>
+<ul>
+<li>Item Use: @Model.Description</li>
+<li>Purchased?: @Model.Purchased</li>
+<li>Item Weight: @Model.Weight lbs</li>
+<li>ID: @Model.Id</li>
+</ul>
 
 <a href='/items/new'>Edit backpack contents</a>
 <a href='/items'>View backpack contents</a>

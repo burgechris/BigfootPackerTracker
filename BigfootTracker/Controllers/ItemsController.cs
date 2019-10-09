@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using BigfootTracker.Models;
 using System.Collections.Generic;
 
 namespace BigfootTracker.Controllers
@@ -20,10 +20,17 @@ namespace BigfootTracker.Controllers
         }
 
         [HttpPost("/items")]
-        public ActionResult Create(string name, string description, bool purchased, int weight)
+        public ActionResult Create(string name, string description, string purchased, int weight)
         {
         Item myItem = new Item(name, description, purchased, weight);
         return RedirectToAction("Index");
+        }
+
+        [HttpGet("/items/{id}")]
+        public ActionResult Show(int id)
+        {
+        Item foundItem = Item.Find(id);
+        return View(foundItem);
         }
     }
 }
